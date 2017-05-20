@@ -9,3 +9,14 @@ C:\Users\Damian\documents\visual studio 2015\Projects\TimeDestroy\TimeDestroy\bi
 C:\Users\Damian\documents\visual studio 2015\Projects\TimeDestroy\TimeDestroy\obj\Debug\TemporaryDestruction.csprojResolveAssemblyReference.cache
 C:\Users\Damian\documents\visual studio 2015\Projects\TimeDestroy\TimeDestroy\obj\Debug\TemporaryDestruction.dll
 C:\Users\Damian\documents\visual studio 2015\Projects\TimeDestroy\TimeDestroy\obj\Debug\TemporaryDestruction.pdb
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\TemporaryDestruction\TemporaryDestruction\bin\Debug\TemporaryDestruction.dll
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\TemporaryDestruction\TemporaryDestruction\bin\Debug\TemporaryDestruction.pdb
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\TemporaryDestruction\TemporaryDestruction\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\TemporaryDestruction\TemporaryDestruction\bin\Debug\Assembly-CSharp.dll
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\TemporaryDestruction\TemporaryDestruction\bin\Debug\Rocket.API.dll
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\TemporaryDestruction\TemporaryDestruction\bin\Debug\Rocket.Core.dll
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\TemporaryDestruction\TemporaryDestruction\bin\Debug\Rocket.Unturned.dll
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\TemporaryDestruction\TemporaryDestruction\bin\Debug\UnityEngine.dll
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\TemporaryDestruction\TemporaryDestruction\obj\Debug\TemporaryDestruction.csprojResolveAssemblyReference.cache
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\TemporaryDestruction\TemporaryDestruction\obj\Debug\TemporaryDestruction.dll
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\TemporaryDestruction\TemporaryDestruction\obj\Debug\TemporaryDestruction.pdb
