@@ -49,7 +49,7 @@ namespace arrowkuu.temporarydestruction
                 if (timer >= 1)
                 {
                     DateTime actually = DateTime.Now;
-                    if (actually > one_date && actually < second_date)
+                    if (!(actually > one_date && actually < second_date))
                     {
                         if (secured == true)
                         {
@@ -64,7 +64,7 @@ namespace arrowkuu.temporarydestruction
                         if (secured == false)
                         {
                             secured = true;
-                            UnturnedChat.Say(Translations.Instance.Translate("protection_enabled"), Color.red);
+                            UnturnedChat.Say(Translations.Instance.Translate("protection_enabled", Configuration.Instance.TimeFrom.Remove(5), Configuration.Instance.TimeTo.Remove(5)), Color.red);
                             Provider.modeConfigData.Structures.Armor_Multiplier = 0;
                             Provider.modeConfigData.Barricades.Armor_Multiplier = 0;
                         }
@@ -81,7 +81,7 @@ namespace arrowkuu.temporarydestruction
                 return new TranslationList()
                 {
                     {"protection_disabled","Structure protection has been disabled."},
-                    {"protection_enabled","Structure protection has been enabled and it runs from 23:00 to 10:00."},
+                    {"protection_enabled","Structure protection has been enabled and it runs from {0} to {1}."},
                 };
             }
         }
