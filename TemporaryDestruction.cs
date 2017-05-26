@@ -28,7 +28,6 @@ namespace arrowkuu.temporarydestruction
             Rocket.Core.Logging.Logger.Log("AS: " + structureArmor.ToString() + " | AB: " + barricadeArmor.ToString(), ConsoleColor.Blue);
             one_date = DateTime.ParseExact(Configuration.Instance.TimeFrom, "HH:mm:ss", CultureInfo.CurrentCulture);
             second_date = DateTime.ParseExact(Configuration.Instance.TimeTo, "HH:mm:ss", CultureInfo.CurrentCulture);
-            if (one_date >= second_date) Rocket.Core.Logging.Logger.LogError("First date must be less than second date. TimeFrom < TimeTo");
         }
 
         protected override void Unload()
@@ -40,33 +39,54 @@ namespace arrowkuu.temporarydestruction
         {
             if (Instance.State == PluginState.Loaded)
             {
-                if (one_date >= second_date)
-                {
-                    Instance.UnloadPlugin();
-                    return;
-                }
                 timer += Time.deltaTime;
                 if (timer >= 1)
                 {
                     DateTime actually = DateTime.Now;
-                    if (!(actually > one_date && actually < second_date))
+                    if (one_date <= second_date)
                     {
-                        if (secured == true)
+                        if (!(actually >= one_date && actually <= second_date))
                         {
-                            secured = false;
-                            UnturnedChat.Say(Translations.Instance.Translate("protection_disabled"), Color.green);
-                            Provider.modeConfigData.Structures.Armor_Multiplier = structureArmor;
-                            Provider.modeConfigData.Barricades.Armor_Multiplier = barricadeArmor;
+                            if (secured == true)
+                            {
+                                secured = false;
+                                UnturnedChat.Say(Translations.Instance.Translate("protection_disabled"), Color.green);
+                                Provider.modeConfigData.Structures.Armor_Multiplier = structureArmor;
+                                Provider.modeConfigData.Barricades.Armor_Multiplier = barricadeArmor;
+                            }
+                        }
+                        else
+                        {
+                            if (secured == false)
+                            {
+                                secured = true;
+                                UnturnedChat.Say(Translations.Instance.Translate("protection_enabled", Configuration.Instance.TimeFrom.Remove(5), Configuration.Instance.TimeTo.Remove(5)), Color.red);
+                                Provider.modeConfigData.Structures.Armor_Multiplier = 0;
+                                Provider.modeConfigData.Barricades.Armor_Multiplier = 0;
+                            }
                         }
                     }
                     else
                     {
-                        if (secured == false)
+                        if (!(actually >= one_date || actually <= second_date))
                         {
-                            secured = true;
-                            UnturnedChat.Say(Translations.Instance.Translate("protection_enabled", Configuration.Instance.TimeFrom.Remove(5), Configuration.Instance.TimeTo.Remove(5)), Color.red);
-                            Provider.modeConfigData.Structures.Armor_Multiplier = 0;
-                            Provider.modeConfigData.Barricades.Armor_Multiplier = 0;
+                            if (secured == true)
+                            {
+                                secured = false;
+                                UnturnedChat.Say(Translations.Instance.Translate("protection_disabled"), Color.green);
+                                Provider.modeConfigData.Structures.Armor_Multiplier = structureArmor;
+                                Provider.modeConfigData.Barricades.Armor_Multiplier = barricadeArmor;
+                            }
+                        }
+                        else
+                        {
+                            if (secured == false)
+                            {
+                                secured = true;
+                                UnturnedChat.Say(Translations.Instance.Translate("protection_enabled", Configuration.Instance.TimeFrom.Remove(5), Configuration.Instance.TimeTo.Remove(5)), Color.red);
+                                Provider.modeConfigData.Structures.Armor_Multiplier = 0;
+                                Provider.modeConfigData.Barricades.Armor_Multiplier = 0;
+                            }
                         }
                     }
                     timer = 0;
