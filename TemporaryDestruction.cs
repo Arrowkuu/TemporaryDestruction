@@ -14,7 +14,7 @@ namespace arrowkuu.temporarydestruction
         public static TemporaryDestruction Instance;
         private DateTime one_date;
         private DateTime second_date;
-        private bool secured = false;
+        public bool secured = false;
         private float timer;
         private float structureArmor;
         private float barricadeArmor;
@@ -102,6 +102,8 @@ namespace arrowkuu.temporarydestruction
                 {
                     {"protection_disabled","Structure protection has been disabled."},
                     {"protection_enabled","Structure protection has been enabled and it runs from {0} to {1}."},
+                    {"protection_is_on", "Structure protection is now enabled."},
+                    {"protection_is_off", "Structure protection is now disabled."}
                 };
             }
         }

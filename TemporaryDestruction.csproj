@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandProtection.cs" />
     <Compile Include="TemporaryDestructionConfiguration.cs" />
     <Compile Include="TemporaryDestruction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

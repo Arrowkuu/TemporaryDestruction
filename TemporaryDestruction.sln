@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemporaryDestruction", "TimeDestroy\TemporaryDestruction.csproj", "{7943C4B6-FD3D-467F-B078-E73AB0C7909E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemporaryDestruction", "TemporaryDestruction.csproj", "{7943C4B6-FD3D-467F-B078-E73AB0C7909E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
