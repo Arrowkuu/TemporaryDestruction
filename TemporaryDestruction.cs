@@ -16,16 +16,19 @@ namespace arrowkuu.temporarydestruction
         private DateTime second_date;
         public bool secured = false;
         private float timer;
-        private float structureArmor;
-        private float barricadeArmor;
+        private float structureArmorHigh;
+        private float structureArmorLow;
+        private float barricadeArmorHigh;
+        private float barricadeArmorLow;
 
         protected override void Load()
         {
             Instance = this;
 
-            structureArmor = Provider.modeConfigData.Structures.Armor_Multiplier;
-            barricadeArmor = Provider.modeConfigData.Barricades.Armor_Multiplier;
-            Rocket.Core.Logging.Logger.Log("AS: " + structureArmor.ToString() + " | AB: " + barricadeArmor.ToString(), ConsoleColor.Blue);
+            structureArmorHigh = Provider.modeConfigData.Structures.Armor_Hightier_Multiplier;
+            structureArmorLow = Provider.modeConfigData.Structures.Armor_Lowtier_Multiplier;
+            barricadeArmorHigh = Provider.modeConfigData.Structures.Armor_Hightier_Multiplier;
+            barricadeArmorLow = Provider.modeConfigData.Structures.Armor_Lowtier_Multiplier;
             one_date = DateTime.ParseExact(Configuration.Instance.TimeFrom, "HH:mm:ss", CultureInfo.CurrentCulture);
             second_date = DateTime.ParseExact(Configuration.Instance.TimeTo, "HH:mm:ss", CultureInfo.CurrentCulture);
         }
@@ -51,8 +54,10 @@ namespace arrowkuu.temporarydestruction
                             {
                                 secured = false;
                                 UnturnedChat.Say(Translations.Instance.Translate("protection_disabled"), Color.green);
-                                Provider.modeConfigData.Structures.Armor_Multiplier = structureArmor;
-                                Provider.modeConfigData.Barricades.Armor_Multiplier = barricadeArmor;
+                                Provider.modeConfigData.Structures.Armor_Hightier_Multiplier = structureArmorHigh;
+                                Provider.modeConfigData.Structures.Armor_Lowtier_Multiplier = structureArmorLow;
+                                Provider.modeConfigData.Barricades.Armor_Hightier_Multiplier = barricadeArmorHigh;
+                                Provider.modeConfigData.Barricades.Armor_Lowtier_Multiplier = barricadeArmorLow;
                             }
                         }
                         else
@@ -61,8 +66,10 @@ namespace arrowkuu.temporarydestruction
                             {
                                 secured = true;
                                 UnturnedChat.Say(Translations.Instance.Translate("protection_enabled", Configuration.Instance.TimeFrom.Remove(5), Configuration.Instance.TimeTo.Remove(5)), Color.red);
-                                Provider.modeConfigData.Structures.Armor_Multiplier = 0;
-                                Provider.modeConfigData.Barricades.Armor_Multiplier = 0;
+                                Provider.modeConfigData.Structures.Armor_Hightier_Multiplier = 0;
+                                Provider.modeConfigData.Structures.Armor_Lowtier_Multiplier = 0;
+                                Provider.modeConfigData.Barricades.Armor_Hightier_Multiplier = 0;
+                                Provider.modeConfigData.Barricades.Armor_Lowtier_Multiplier = 0;
                             }
                         }
                     }
@@ -74,8 +81,10 @@ namespace arrowkuu.temporarydestruction
                             {
                                 secured = false;
                                 UnturnedChat.Say(Translations.Instance.Translate("protection_disabled"), Color.green);
-                                Provider.modeConfigData.Structures.Armor_Multiplier = structureArmor;
-                                Provider.modeConfigData.Barricades.Armor_Multiplier = barricadeArmor;
+                                Provider.modeConfigData.Structures.Armor_Hightier_Multiplier = structureArmorHigh;
+                                Provider.modeConfigData.Structures.Armor_Lowtier_Multiplier = structureArmorLow;
+                                Provider.modeConfigData.Barricades.Armor_Hightier_Multiplier = barricadeArmorHigh;
+                                Provider.modeConfigData.Barricades.Armor_Lowtier_Multiplier = barricadeArmorLow;
                             }
                         }
                         else
@@ -84,8 +93,10 @@ namespace arrowkuu.temporarydestruction
                             {
                                 secured = true;
                                 UnturnedChat.Say(Translations.Instance.Translate("protection_enabled", Configuration.Instance.TimeFrom.Remove(5), Configuration.Instance.TimeTo.Remove(5)), Color.red);
-                                Provider.modeConfigData.Structures.Armor_Multiplier = 0;
-                                Provider.modeConfigData.Barricades.Armor_Multiplier = 0;
+                                Provider.modeConfigData.Structures.Armor_Hightier_Multiplier = 0;
+                                Provider.modeConfigData.Structures.Armor_Lowtier_Multiplier = 0;
+                                Provider.modeConfigData.Barricades.Armor_Hightier_Multiplier = 0;
+                                Provider.modeConfigData.Barricades.Armor_Lowtier_Multiplier = 0;
                             }
                         }
                     }
